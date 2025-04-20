@@ -1,0 +1,276 @@
+/* Color Variables */
+:root {
+  --accent-orange: #e23d18;
+  --deep-blue: #245b84;
+  --light-blue: #eaf3fb;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: rgb(255, 255, 255);
+  color: #111;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--deep-blue);
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent-orange);
+}
+
+/* Section Styling */
+.section {
+  padding: 40px 20px;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Home gets full height */
+.home {
+  min-height: 100vh;
+  background: #07243c;
+  padding-top: 60px;
+}
+
+/* Others get shorter height */
+.about,
+.education,
+.extracurricular,
+.skills,
+.contact {
+  min-height: 50vh;
+  background: var(--light-blue);
+}
+
+/* Center Text on Home */
+.centered {
+  text-align: center;
+}
+
+.centered h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.centered p {
+  font-size: 1.2rem;
+  color: #ddcdcd;
+}
+
+/* Section Content Styling */
+.section-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-content:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlighted Name */
+.highlight-name {
+  color: var(--accent-orange);
+}
+
+.gravitas-one-regular {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--deep-blue);
+  border-bottom: 2px solid var(--accent-orange);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .centered h1 {
+    font-size: 2.5rem;
+  }
+
+  .centered p {
+    font-size: 1rem;
+  }
+}
+
+/* Form Styling */
+.styled-form {
+  max-width: 700px;
+  width: 100%;
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.styled-form label {
+  font-weight: bold;
+  color: var(--deep-blue);
+}
+
+.styled-form input,
+.styled-form textarea {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-orange);
+  box-shadow: 0 4px 16px rgba(226, 61, 24, 0.1);
+}
+
+.styled-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.styled-form button {
+  background-color: var(--accent-orange);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.styled-form button:hover {
+  background-color: #c73612;
+  transform: translateY(-3px);
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #07243c;
+  color: #f5f5f5;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 0px;
+}
+
+.footer a {
+  color: #ddcdcd;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Section Cards */
+.section-content {
+  max-width: 1000px; /* Optional, for wider sections */
+  width: 100%;
+}
+
+.skills,
+.extracurricular {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap if needed */
+  justify-content: space-between; /* Space between cards */
+  gap: 20px;
+}
+
+.skill-card,
+.extracurricular-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%; /* 30% of container width */
+  max-width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* For responsive behavior */
+@media (max-width: 768px) {
+  .skill-card,
+  .extracurricular-card {
+    flex-basis: 100%; /* Make cards take up 100% width on small screens */
+  }
+}
